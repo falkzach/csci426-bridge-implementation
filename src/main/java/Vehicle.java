@@ -13,7 +13,7 @@ public abstract class Vehicle
     protected Axel frontAxel;
     protected Axel rearAxel;
 
-    private Stats stats;
+    protected Stats stats;
 
     /**
      * inject the dependent objects at run time
@@ -23,7 +23,7 @@ public abstract class Vehicle
      * @param frontAxel Axel
      * @param rearAxel Axel
      */
-    public Vehicle(
+    Vehicle(
             Engine engine,
             Transmission transmission,
             TransferCase transferCase,
@@ -42,7 +42,8 @@ public abstract class Vehicle
      * get the number of doors the vehicle has
      * @return int numberOfDoors
      */
-    public int getNumberOfDoors() {
+    public int getNumberOfDoors()
+    {
         return numberOfDoors;
     }
 
@@ -50,7 +51,8 @@ public abstract class Vehicle
      * set the number of doors that the vehicle has
      * @param numberOfDoors int
      */
-    public void setNumberOfDoors(int numberOfDoors) {
+    public void setNumberOfDoors(int numberOfDoors)
+    {
         numberOfDoors = numberOfDoors;
     }
 
@@ -58,7 +60,8 @@ public abstract class Vehicle
      * get the number of wheels
      * @return int numberOfWheels
      */
-    public int getNumberOfWheels() {
+    public int getNumberOfWheels()
+    {
         return numberOfWheels;
     }
 
@@ -66,7 +69,8 @@ public abstract class Vehicle
      * set the number of wheels
      * @param numberOfWheels int
      */
-    public void setNumberOfWheels(int numberOfWheels) {
+    public void setNumberOfWheels(int numberOfWheels)
+    {
         numberOfWheels = numberOfWheels;
     }
 
@@ -137,7 +141,8 @@ class NullVehicle extends Vehicle
     /**
      * overide the default constructor
      */
-    public NullVehicle(Engine engine, Transmission transmission, TransferCase transferCase, Axel frontAxel, Axel rearAxel) {
+    public NullVehicle(Engine engine, Transmission transmission, TransferCase transferCase, Axel frontAxel, Axel rearAxel)
+    {
         super(new NullEngine(), new NullTransmission(), new NullTransferCase(), new NullAxel(), new NullAxel());
     }
 
@@ -176,7 +181,8 @@ class Car extends Vehicle
 /**
  * truck
  */
-class Truck extends Vehicle {
+class Truck extends Vehicle
+{
     public Truck(Engine engine, Transmission transmission, TransferCase transferCase, Axel frontAxel, Axel rearAxel)
     {
         super(engine, transmission, transferCase, frontAxel, rearAxel);

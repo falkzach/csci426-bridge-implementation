@@ -29,23 +29,28 @@ public class Stats {
         this.handling = handling;
     }
 
-    public double getCost() {
+    public double getCost()
+    {
         return cost;
     }
 
-    public double getPower() {
+    public double getPower()
+    {
         return power;
     }
 
-    public double getTorque() {
+    public double getTorque()
+    {
         return torque;
     }
 
-    public double getWeight() {
+    public double getWeight()
+    {
         return weight;
     }
 
-    public double getHandling() {
+    public double getHandling()
+    {
         return handling;
     }
 

@@ -38,7 +38,8 @@ public abstract class Transmission
 class NullTransmission extends Transmission
 {
     @Override
-    public void shift(int gearId) {
+    public void shift(int gearId)
+    {
         System.out.println("You cannot shift a Null Transmission");
     }
 

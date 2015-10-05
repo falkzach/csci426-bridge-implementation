@@ -1,15 +1,31 @@
 /**
  * Created by falkz on 9/28/2015.
  */
-public abstract class Engine {
+public abstract class Engine
+{
     protected double rpm;
     protected boolean running;
 
+    /**
+     * start the vehicle
+     * @return running
+     */
     public abstract boolean start();
+
+    /**
+     * stop the vehicle
+     * @return running
+     */
     public abstract boolean stop();
+
+    /**
+     * drive the vehicle
+     * @return rpm
+     */
     public abstract double drive ();
 
-    public double getRpm() {
+    public double getRpm()
+    {
         return rpm;
     }
 
@@ -17,14 +33,17 @@ public abstract class Engine {
     {
         System.out.println("fuel");
     }
+
     protected void crankStarter()
     {
         System.out.println("starter cranking, compression");
     }
+
     protected void throttle()
     {
 
     }
+
     public boolean isRunning()
     {
         return running;
@@ -33,7 +52,6 @@ public abstract class Engine {
 
 class NullEngine extends Engine
 {
-
     @Override
     public boolean start() {
         System.out.println("You cannot start a Null engine");
@@ -51,7 +69,6 @@ class NullEngine extends Engine
         return 0;
     }
 
-
     public String toString()
     {
         return "null";
@@ -61,7 +78,8 @@ class NullEngine extends Engine
 class GasEngine extends Engine
 {
     @Override
-    public boolean start() {
+    public boolean start()
+    {
         spark();
         pumpFuel();
         crankStarter();
@@ -70,13 +88,15 @@ class GasEngine extends Engine
     }
 
     @Override
-    public boolean stop() {
+    public boolean stop()
+    {
         running = false;
         return running;
     }
 
     @Override
-    public double drive() {
+    public double drive()
+    {
         pumpFuel();
         spark();
         throttle();
@@ -98,7 +118,8 @@ class GasEngine extends Engine
 class DieselEngine extends Engine
 {
     @Override
-    public boolean start() {
+    public boolean start()
+    {
         pumpFuel();
         crankStarter();
         running = true;
@@ -106,13 +127,15 @@ class DieselEngine extends Engine
     }
 
     @Override
-    public boolean stop() {
+    public boolean stop()
+    {
         running = false;
         return running;
     }
 
     @Override
-    public double drive() {
+    public double drive()
+    {
         pumpFuel();
         throttle();
         rpm = 5000;

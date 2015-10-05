@@ -41,17 +41,20 @@ public class TransferCase
 class NullTransferCase extends TransferCase
 {
     @Override
-    public void engage() {
+    public void engage()
+    {
         System.out.println("You can't engage a Null Transfer Case");
     }
 
     @Override
-    public double getOutputSpeedFront(double inputSpeed) {
+    public double getOutputSpeedFront(double inputSpeed)
+    {
         return 0.0;
     }
 
     @Override
-    public double getOutputSpeedRear(double inputSpeed) {
+    public double getOutputSpeedRear(double inputSpeed)
+    {
         return inputSpeed * 1.0;
     }
 }
@@ -64,12 +67,14 @@ class AWDTransferCase extends TransferCase
     }
 
     @Override
-    public void engage() {
+    public void engage()
+    {
         super.engage();
     }
 
     @Override
-    public void disengage() {
+    public void disengage()
+    {
         engaged = true;
     }
 

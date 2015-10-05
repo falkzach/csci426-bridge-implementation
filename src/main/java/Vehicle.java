@@ -105,6 +105,11 @@ public abstract class Vehicle
         engine.drive();
     }
 
+    public void shift(int gearId)
+    {
+        transmission.shift(gearId);
+    }
+
     /**
      * return a string describing the vehicle
      * @return String

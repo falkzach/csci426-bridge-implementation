@@ -76,6 +76,7 @@ public abstract class Vehicle
 
     /**
      *  start the vehicle
+     *  @return running
      */
     public boolean start()
     {
@@ -84,6 +85,10 @@ public abstract class Vehicle
         return running;
     }
 
+    /**
+     * stop the vehicle
+     * @return running
+     */
     public boolean stop()
     {
         System.out.println("Vehicle is stopped");
@@ -105,6 +110,10 @@ public abstract class Vehicle
         engine.drive();
     }
 
+    /**
+     * shit the vehicle
+     * @param gearId int
+     */
     public void shift(int gearId)
     {
         transmission.shift(gearId);
